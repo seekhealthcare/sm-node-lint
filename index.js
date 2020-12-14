@@ -6,10 +6,13 @@ module.exports = {
     "plugin:jest/recommended",
     "plugin:json/recommended",
     "plugin:node/recommended",
-    "plugin:prettier/recommended",
     "plugin:promise/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
+  plugins: ['simple-import-sort', 'import'],
   env: {
     node: true,
     es6: true,
@@ -19,11 +22,38 @@ module.exports = {
   globals: {
     expect: true
   },
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module"
   },
   rules: {
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^[a-z]'], // libraries
+          ['^@\\w'], // started from @
+          ['^[A-Z]'], // aliases
+          ['^\\.+(!?.scss)'], // not scss file
+          ['^\\.'] // others file
+        ]
+      }
+    ],
+    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true
+      }
+    ],
+    '@typescript-eslint/no-empty-interface': [
+      'warn',
+      {
+        allowSingleExtends: false
+      }
+    ],
     indent: ["error", 2],
     "max-len": [
       "error",
@@ -37,6 +67,11 @@ module.exports = {
     ],
     "no-async-promise-executor": "warn",
     "no-console": "warn",
+    'no-empty-pattern': 'warn',
+    'sort-imports': 'off',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
     "no-empty": "error",
     "no-import-assign": "error",
     "no-lonely-if": "error",
@@ -82,6 +117,7 @@ module.exports = {
       {
         bracketSpacing: true
       },
+      { usePrettierrc: true }
     ],
     "sonarjs/prefer-immediate-return": "warn"
   },
