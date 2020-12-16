@@ -35,7 +35,6 @@ module.exports = {
           ['^[a-z]'], // libraries
           ['^@\\w'], // started from @
           ['^[A-Z]'], // aliases
-          ['^\\.+(!?.scss)'], // not scss file
           ['^\\.'] // others file
         ]
       }
@@ -107,7 +106,7 @@ module.exports = {
       },
     ],
     "require-await": "error",
-    semi: ["error", "never"],
+    semi: ["error", "always"],
     "import/no-commonjs": "error",
     "import/no-cycle": "error",
     "jest/no-mocks-import": "off",
@@ -121,5 +120,12 @@ module.exports = {
     ],
     "sonarjs/prefer-immediate-return": "warn"
   },
-  settings: {}
+  settings: {
+    "import/resolver": {
+      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
+    },
+    "node": {
+      "tryExtensions": [".js", ".json", ".node", ".ts", ".d.ts"]
+  }
+  }
 };
