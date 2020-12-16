@@ -6,9 +6,9 @@ module.exports = {
     "plugin:jest/recommended",
     "plugin:json/recommended",
     "plugin:node/recommended",
-    "plugin:prettier/recommended",
     "plugin:promise/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:prettier/recommended"
   ],
   env: {
     node: true,
@@ -72,7 +72,7 @@ module.exports = {
       },
     ],
     "require-await": "error",
-    semi: ["error", "never"],
+    semi: ["error", "always"],
     "import/no-commonjs": "error",
     "import/no-cycle": "error",
     "jest/no-mocks-import": "off",
