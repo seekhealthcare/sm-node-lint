@@ -8,8 +8,11 @@ module.exports = {
     "plugin:node/recommended",
     "plugin:promise/recommended",
     "plugin:sonarjs/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
+  plugins: ['simple-import-sort', 'import'],
   env: {
     node: true,
     es6: true,
@@ -19,6 +22,7 @@ module.exports = {
   globals: {
     expect: true
   },
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module"
@@ -37,6 +41,7 @@ module.exports = {
     ],
     "no-async-promise-executor": "warn",
     "no-console": "warn",
+    'no-empty-pattern': 'warn',
     "no-empty": "error",
     "no-import-assign": "error",
     "no-lonely-if": "error",
@@ -73,6 +78,25 @@ module.exports = {
     ],
     "require-await": "error",
     semi: ["error", "always"],
+    'sort-imports': 'off',
+
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true
+      }
+    ],
+    '@typescript-eslint/no-empty-interface': [
+      'warn',
+      {
+        allowSingleExtends: false
+      }
+    ],
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
     "import/no-commonjs": "error",
     "import/no-cycle": "error",
     "jest/no-mocks-import": "off",
@@ -82,8 +106,27 @@ module.exports = {
       {
         bracketSpacing: true
       },
+      { usePrettierrc: true }
+    ],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^[a-z]'], // libraries
+          ['^@\\w'], // started from @
+          ['^[A-Z]'], // aliases
+          ['^\\.'] // others file
+        ]
+      }
     ],
     "sonarjs/prefer-immediate-return": "warn"
   },
-  settings: {}
+  settings: {
+    "import/resolver": {
+      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
+    },
+    "node": {
+      "tryExtensions": [".js", ".json", ".node", ".ts", ".d.ts"]
+    }
+  }
 };
