@@ -8,8 +8,11 @@ module.exports = {
     "plugin:node/recommended",
     "plugin:promise/recommended",
     "plugin:sonarjs/recommended",
+<<<<<<< HEAD
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
+=======
+>>>>>>> setup/SM-42-add-prettier
     "plugin:prettier/recommended"
   ],
   plugins: ['simple-import-sort', 'import'],
