@@ -28,49 +28,10 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
-    'simple-import-sort/imports': [
-      'error',
-      {
-        groups: [
-          ['^[a-z]'], // libraries
-          ['^@\\w'], // started from @
-          ['^[A-Z]'], // aliases
-          ['^\\.'] // others file
-        ]
-      }
-    ],
-    '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/explicit-function-return-type': [
-      'warn',
-      {
-        allowExpressions: true,
-        allowConciseArrowFunctionExpressionsStartingWithVoid: true
-      }
-    ],
-    '@typescript-eslint/no-empty-interface': [
-      'warn',
-      {
-        allowSingleExtends: false
-      }
-    ],
     indent: ["error", 2],
-    "max-len": [
-      "error",
-      {
-        code: 120,
-        tabWidth: 2,
-        ignoreTrailingComments: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true
-      },
-    ],
     "no-async-promise-executor": "warn",
     "no-console": "warn",
     'no-empty-pattern': 'warn',
-    'sort-imports': 'off',
-    'import/first': 'error',
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
     "no-empty": "error",
     "no-import-assign": "error",
     "no-lonely-if": "error",
@@ -86,6 +47,16 @@ module.exports = {
     ],
     "no-useless-escape": "warn",
     "no-var": "error",
+    "max-len": [
+      "error",
+      {
+        code: 120,
+        tabWidth: 2,
+        ignoreTrailingComments: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true
+      },
+    ],
     "padding-line-between-statements": [
       "error",
       {
@@ -107,6 +78,36 @@ module.exports = {
     ],
     "require-await": "error",
     semi: ["error", "always"],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^[a-z]'], // libraries
+          ['^@\\w'], // started from @
+          ['^[A-Z]'], // aliases
+          ['^\\.'] // others file
+        ]
+      }
+    ],
+    'sort-imports': 'off',
+
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true
+      }
+    ],
+    '@typescript-eslint/no-empty-interface': [
+      'warn',
+      {
+        allowSingleExtends: false
+      }
+    ],
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
     "import/no-commonjs": "error",
     "import/no-cycle": "error",
     "jest/no-mocks-import": "off",
@@ -126,6 +127,6 @@ module.exports = {
     },
     "node": {
       "tryExtensions": [".js", ".json", ".node", ".ts", ".d.ts"]
-  }
+    }
   }
 };
