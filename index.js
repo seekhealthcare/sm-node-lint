@@ -29,6 +29,16 @@ module.exports = {
   },
   rules: {
     indent: ["error", 2],
+    "max-len": [
+      "error",
+      {
+        code: 120,
+        tabWidth: 2,
+        ignoreTrailingComments: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true
+      },
+    ],
     "no-async-promise-executor": "warn",
     "no-console": "warn",
     'no-empty-pattern': 'warn',
@@ -47,16 +57,6 @@ module.exports = {
     ],
     "no-useless-escape": "warn",
     "no-var": "error",
-    "max-len": [
-      "error",
-      {
-        code: 120,
-        tabWidth: 2,
-        ignoreTrailingComments: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true
-      },
-    ],
     "padding-line-between-statements": [
       "error",
       {
@@ -78,17 +78,6 @@ module.exports = {
     ],
     "require-await": "error",
     semi: ["error", "always"],
-    'simple-import-sort/imports': [
-      'error',
-      {
-        groups: [
-          ['^[a-z]'], // libraries
-          ['^@\\w'], // started from @
-          ['^[A-Z]'], // aliases
-          ['^\\.'] // others file
-        ]
-      }
-    ],
     'sort-imports': 'off',
 
     '@typescript-eslint/explicit-function-return-type': [
@@ -118,6 +107,17 @@ module.exports = {
         bracketSpacing: true
       },
       { usePrettierrc: true }
+    ],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^[a-z]'], // libraries
+          ['^@\\w'], // started from @
+          ['^[A-Z]'], // aliases
+          ['^\\.'] // others file
+        ]
+      }
     ],
     "sonarjs/prefer-immediate-return": "warn"
   },
