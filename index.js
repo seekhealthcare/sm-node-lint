@@ -48,13 +48,7 @@ module.exports = {
     "no-multiple-empty-lines": "error",
     "no-sync": "warn",
     "no-undef": "error",
-    "no-unused-vars": [
-      "error",
-      {
-        vars: "all",
-        args: "after-used"
-      },
-    ],
+    "no-unused-vars": "off",
     "no-useless-escape": "warn",
     "no-var": "error",
     "padding-line-between-statements": [
@@ -93,7 +87,13 @@ module.exports = {
         allowSingleExtends: false
       }
     ],
-    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-unused-vars': [
+      'error', 
+      {
+      vars: "all",
+      args: "after-used"
+      }
+    ],
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
