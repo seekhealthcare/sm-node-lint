@@ -28,6 +28,7 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
+    'curly': true,
     indent: ["error", 2],
     "max-len": [
       "error",
