@@ -28,7 +28,7 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
-    'curly': true,
+    curly: 2,
     indent: ["error", 2],
     "max-len": [
       "error",
@@ -90,10 +90,10 @@ module.exports = {
     ],
     '@typescript-eslint/no-unused-vars': [
       'error', 
-      {
-      vars: "all",
-      args: "after-used"
-      }
+        {
+        vars: "all",
+        args: "after-used"
+        }
     ],
     'import/first': 'error',
     'import/newline-after-import': 'error',
