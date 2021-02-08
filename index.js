@@ -76,6 +76,7 @@ module.exports = {
     'sort-imports': 'off',
 
     '@typescript-eslint/explicit-function-return-type': [
+      'off',
       'warn',
       {
         allowExpressions: true,
@@ -125,7 +126,7 @@ module.exports = {
   overrides: [
     {
       // enable the rule specifically for TypeScript files
-      files: ['*.ts', '*.tsx'],
+      files: ['*.ts'],
       rules: {
         '@typescript-eslint/explicit-function-return-type': ['warn']
       }
