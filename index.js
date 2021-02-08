@@ -122,6 +122,15 @@ module.exports = {
     ],
     "sonarjs/prefer-immediate-return": "warn"
   },
+  overrides: [
+    {
+      // enable the rule specifically for TypeScript files
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': ['warn']
+      }
+    }
+  ],
   settings: {
     "import/resolver": {
       typescript: {} // this loads <rootdir>/tsconfig.json to eslint
