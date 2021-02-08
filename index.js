@@ -75,13 +75,7 @@ module.exports = {
     semi: ["error", "always"],
     'sort-imports': 'off',
 
-    '@typescript-eslint/explicit-function-return-type': [
-      'warn',
-      {
-        allowExpressions: true,
-        allowConciseArrowFunctionExpressionsStartingWithVoid: true
-      }
-    ],
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-interface': [
       'warn',
       {
@@ -122,6 +116,21 @@ module.exports = {
     ],
     "sonarjs/prefer-immediate-return": "warn"
   },
+  overrides: [
+    {
+      // enable the rule specifically for TypeScript files
+      files: ['*.ts'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': [
+          'warn',
+          {
+            allowExpressions: true,
+            allowConciseArrowFunctionExpressionsStartingWithVoid: true
+          }
+        ]
+      }
+    }
+  ],
   settings: {
     "import/resolver": {
       typescript: {} // this loads <rootdir>/tsconfig.json to eslint
