@@ -75,14 +75,7 @@ module.exports = {
     semi: ["error", "always"],
     'sort-imports': 'off',
 
-    '@typescript-eslint/explicit-function-return-type': [
-      'off',
-      'warn',
-      {
-        allowExpressions: true,
-        allowConciseArrowFunctionExpressionsStartingWithVoid: true
-      }
-    ],
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-interface': [
       'warn',
       {
@@ -128,7 +121,13 @@ module.exports = {
       // enable the rule specifically for TypeScript files
       files: ['*.ts'],
       rules: {
-        '@typescript-eslint/explicit-function-return-type': ['warn']
+        '@typescript-eslint/explicit-function-return-type': [
+          'warn',
+          {
+            allowExpressions: true,
+            allowConciseArrowFunctionExpressionsStartingWithVoid: true
+          }
+        ]
       }
     }
   ],
