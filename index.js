@@ -1,37 +1,38 @@
 module.exports = {
   extends: [
-    "eslint:recommended",
-    "standard",
-    "plugin:import/recommended",
-    "plugin:jest/recommended",
-    "plugin:json/recommended",
-    "plugin:node/recommended",
-    "plugin:promise/recommended",
-    "plugin:sonarjs/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    'eslint:recommended',
+    'standard',
+    'plugin:import/recommended',
+    'plugin:jest/recommended',
+    'plugin:json/recommended',
+    'plugin:node/recommended',
+    'plugin:promise/recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'
   ],
   plugins: ['simple-import-sort', 'import'],
   env: {
-    node: true,
-    es6: true,
-    jest: true,
-    "jest/globals": true
+    'node': true,
+    'es6': true,
+    'jest': true,
+    'jest/globals': true
   },
   globals: {
     expect: true
   },
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module"
+    sourceType: 'module'
   },
   rules: {
-    curly: 2,
-    indent: ["error", 2],
-    "max-len": [
-      "error",
+    // eslint
+    'curly': 2,
+    'indent': ['error', 2, { SwitchCase: 1 }],
+    'max-len': [
+      'error',
       {
         code: 120,
         tabWidth: 2,
@@ -40,41 +41,42 @@ module.exports = {
         ignoreTemplateLiterals: true
       },
     ],
-    "no-async-promise-executor": "warn",
-    "no-console": "warn",
+    'no-async-promise-executor': 'warn',
+    'no-console': 'warn',
     'no-empty-pattern': 'warn',
-    "no-empty": "error",
-    "no-import-assign": "error",
-    "no-lonely-if": "error",
-    "no-multiple-empty-lines": "error",
-    "no-sync": "warn",
-    "no-undef": "error",
-    "no-unused-vars": "off",
-    "no-useless-escape": "warn",
-    "no-var": "error",
-    "padding-line-between-statements": [
-      "error",
+    'no-empty': 'error',
+    'no-import-assign': 'error',
+    'no-lonely-if': 'error',
+    'no-multiple-empty-lines': 'error',
+    'no-sync': 'warn',
+    'no-undef': 'error',
+    'no-unused-vars': 'off',
+    'no-useless-escape': 'warn',
+    'no-var': 'error',
+    'padding-line-between-statements': [
+      'error',
       {
-        blankLine: "always",
-        prev: "*",
-        next: ["class", "function", "export"]
+        blankLine: 'always',
+        prev: '*',
+        next: ['class', 'function', 'export']
       },
     ],
-    "prefer-arrow-callback": "error",
-    "prefer-const": "error",
-    "prefer-promise-reject-errors": "off",
-    quotes: [
-      "error",
-      "single",
+    'prefer-arrow-callback': 'error',
+    'prefer-const': 'error',
+    'prefer-promise-reject-errors': 'off',
+    'quotes': [
+      'error',
+      'single',
       {
         avoidEscape: true,
         allowTemplateLiterals: false
       },
     ],
-    "require-await": "error",
-    semi: ["error", "always"],
+    'require-await': 'error',
+    'semi': ['error', 'always'],
     'sort-imports': 'off',
 
+    // @typescript-eslint
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-interface': [
       'warn',
@@ -85,24 +87,32 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': [
       'error', 
         {
-        vars: "all",
-        args: "after-used"
+          vars: 'all',
+          args: 'after-used'
         }
     ],
+
+    // import
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
-    "import/no-commonjs": "error",
-    "import/no-cycle": "error",
-    "jest/no-mocks-import": "off",
-    "node/no-unsupported-features/es-syntax": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        bracketSpacing: true
-      },
+    'import/no-commonjs': 'error',
+    'import/no-cycle': 'error',
+
+    // jest
+    'jest/no-mocks-import': 'off',
+
+    // node
+    'node/no-unsupported-features/es-syntax': 'off',
+
+    // prettier
+    'prettier/prettier': [
+      'error',
+      { bracketSpacing: true },
       { usePrettierrc: true }
     ],
+
+    // simple-import-sort
     'simple-import-sort/imports': [
       'error',
       {
@@ -114,7 +124,9 @@ module.exports = {
         ]
       }
     ],
-    "sonarjs/prefer-immediate-return": "warn"
+
+    // sonarjs
+    'sonarjs/prefer-immediate-return': 'warn'
   },
   overrides: [
     {
@@ -132,11 +144,11 @@ module.exports = {
     }
   ],
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       typescript: {} // this loads <rootdir>/tsconfig.json to eslint
     },
-    "node": {
-      "tryExtensions": [".js", ".json", ".node", ".ts", ".d.ts"]
+    'node': {
+      'tryExtensions': ['.js', '.json', '.node', '.ts', '.d.ts']
     }
   }
 };
