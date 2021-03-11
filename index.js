@@ -103,6 +103,7 @@ module.exports = {
     'jest/no-mocks-import': 'off',
 
     // node
+    'node/no-unpublished-import': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
 
     // prettier

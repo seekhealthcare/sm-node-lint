@@ -1,6 +1,6 @@
 {
   "name": "sm-node-lint",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "SeekMedicare JavaScript/TypeScript/Node.js code linting configuration",
   "main": "index.js",
   "author": "SeekMedicare Team",

@@ -17,3 +17,7 @@ All notable changes to this project will be documented in this file.
 ## [0.1.3] - 2021-03-04
 
 - Add indentation for SwitchCase
+
+## [0.1.4] - 2021-03-11
+
+- node/no-unpublished-import: off
