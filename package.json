@@ -1,18 +1,13 @@
 {
   "name": "sm-node-lint",
   "version": "0.1.4",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "SeekMedicare Team",
+  "keywords": ["SeekMedicare", "eslint", "prettier", "sonar"],
+  "repository": "https://github.com/seekhealthcare/sm-node-lint.git",
   "description": "SeekMedicare JavaScript/TypeScript/Node.js code linting configuration",
   "main": "index.js",
-  "author": "SeekMedicare Team",
-  "license": "ISC",
-  "keywords": [
-    "seekmedicare",
-    "eslint",
-    "sonar"
-  ],
-  "engines": {
-    "node": ">=14"
-  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
