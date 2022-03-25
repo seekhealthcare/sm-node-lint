@@ -9,7 +9,6 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
     'plugin:prettier/recommended'
   ],
   plugins: ['simple-import-sort', 'import'],
@@ -127,7 +126,8 @@ module.exports = {
     ],
 
     // sonarjs
-    'sonarjs/prefer-immediate-return': 'warn'
+    'sonarjs/prefer-immediate-return': 'warn',
+    'sonarjs/no-nested-template-literals': 'off'
   },
   overrides: [
     {
