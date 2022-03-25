@@ -21,3 +21,7 @@ All notable changes to this project will be documented in this file.
 ## [0.1.4] - 2021-03-11
 
 - node/no-unpublished-import: off
+
+## [0.1.5] - 2021-03-25
+
+- Update dependency versions; remove obsolete eslint-plugin-standard; sonarjs/no-nested-template-literals: off
